@@ -29,9 +29,31 @@
         Q7  `'^""~`   _yQQM'         `"FQ
         F;         _yQQQQF              Q
   -->
+  <title>NYC Historical Site - Sinatra</title>
+  <style>
+   body { margin:0 padding: 0; }
+   .container { width: 85%; margin: 0 auto; }
+   .main-menu { list-style: none; margin:0; padding: 0;}
+   .main-menu li { display: inline-block; padding: 15px 15px 15px 0; }
+  </style>
   </head>
   <body>
-    <%= yield %>
+    <div class="header">
+     <div class="container">
+       <ul class="main-menu">
+        <li><a href="/figures">Figures</a></li>
+        <li><a href="/landmarks">Landmarks</a></li>
+        <li><a href="/figures/new">New Figure</a></li>
+      </ul>
+     </div>
+    </div>
+    <div class="container">
+     <% unless locals.empty? %>
+      <%= locals[:message] %>
+     <% end %>
+     <%= yield %>
+    </div>
+    
   </body>
 
 </html>
