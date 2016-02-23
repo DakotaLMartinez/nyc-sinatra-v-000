@@ -1,10 +1,5 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Year Completed</th>
-  </tr>
-  <tr>
-    <td><%= @landmark.name %></td>
-    <td><%= @landmark.year_completed %></td>
-  </tr>
-<table>
+<h2>Landmark: <%= @landmark.name %></h2>
+<% if @landmark.respond_to?(:year_completed) %>
+  <p>Year Built:  <%= @landmark.year_completed %> </p>
+<% end %>
+<p><a href="/landmarks/<%= @landmark.id %>/edit">Edit Landmark</a></p>
