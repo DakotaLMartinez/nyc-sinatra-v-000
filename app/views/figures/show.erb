@@ -1,0 +1,19 @@
+<h1><%= @figure.name %></h1>
+<h3>Titles:</h3>
+<% if !@figure.titles.empty? %>
+<ul class="details">
+  <% @figure.titles.each do |title| %>
+    <li><%= title.name %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<h3>Landmarks:</h3>
+<% if !@figure.landmarks.empty? %>
+<ul class="details">
+  <% @figure.landmarks.each do |landmark| %>
+    <li><a href="/landmarks/<%= landmark.slug %>"><%= landmark.name %></a></li>
+  <% end %>
+</ul>
+<% end %>
+<p><a href="/figures/<%= @figure.id %>/edit">Edit Figure</a></p>

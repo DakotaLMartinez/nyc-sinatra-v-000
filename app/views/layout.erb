@@ -31,15 +31,24 @@
   -->
   <title>NYC Historical Site - Sinatra</title>
   <style>
-   body { margin:0 padding: 0; }
+    body { margin:0; padding: 0; }
+   .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+   .header { border-bottom: 2px solid black; background: tan;}
+   .header h1 { float: left; margin: 0; padding: 5px 0;}
    .container { width: 85%; margin: 0 auto; }
-   .main-menu { list-style: none; margin:0; padding: 0;}
+   .main-menu {  float: right; list-style: none; margin:0; padding: 0;}
    .main-menu li { display: inline-block; padding: 15px 15px 15px 0; }
+   .main-menu a { text-decoration: none; }
   </style>
   </head>
   <body>
-    <div class="header">
+    <div class="header clearfix">
      <div class="container">
+      <h1>NYC Historical Site</h1>
        <ul class="main-menu">
         <li><a href="/figures">Figures</a></li>
         <li><a href="/landmarks">Landmarks</a></li>
